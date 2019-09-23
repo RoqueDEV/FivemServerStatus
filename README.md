@@ -17,4 +17,5 @@ BUG_LOG_CHANNEL - channel to log bug reports
 LOG_CHANNEL - channel to log status changes
 ```
 ## Running
-1. `npm start`
+1. `npm i`
+2. `npm start` or `node ./index.js`
