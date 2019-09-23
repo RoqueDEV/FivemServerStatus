@@ -19,3 +19,10 @@ LOG_CHANNEL - channel to log status changes
 ## Running
 1. `npm i`
 2. `npm start` or `node ./index.js`
+
+
+## Commands
++status <Message> to add a warning message in the server status embed.
++status clear to clear the warning message.
+  
+![Screenshot](https://media.discordapp.net/attachments/424886239410388992/625739298846801936/unknown.png)
