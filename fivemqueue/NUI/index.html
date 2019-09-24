@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="main.js" type="text/javascript"></script>
+		<link href="main.css" rel="stylesheet">
+	</head>
+	<body>
+		<center>
+			<div style="display: none;" id="panel">
+				<table id="list" class="fixed_headers" width="100%">
+				</table>
+				<br><br>
+				<button class="button" onclick="RefreshPanel()">Refresh</button>
+				<button class="button" onclick="ClosePanel()">Close</button>
+			</div>
+			<div style="display: none;" id="edit">
+				<table id="options" width="100%">
+				</table>
+				<br><br>
+				<button class="button" onClick="BackPanel()">Back</button>
+				<button class="button" onclick="ClosePanel()">Close</button>
+			</div>
+		</center>
+	</body>
+</html>
