@@ -187,7 +187,7 @@ exports.start = function(SETUP) {
     getVars().then((vars) => {
       getPlayers().then((players) => {
         if (players.length !== LAST_COUNT) log(LOG_LEVELS.INFO,`${players.length} players`);
-        let queue = vars['Wachtrij'];
+        let queue = vars['Queue'];
         let embed = UpdateEmbed()
         .addField('Server Status',':white_check_mark: Online',true)
         .addField('Wachtrij',queue === 'Aan' || queue === undefined ? '0' : queue.split(':')[1].trim(),true)
