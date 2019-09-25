@@ -34,3 +34,8 @@ LOG_CHANNEL - channel to log status changes
 2. +status clear to clear the warning message.
   
 ![Screenshot](https://media.discordapp.net/attachments/424886239410388992/625739298846801936/unknown.png)
+
+## Credits
+- Roque https://github.com/RoqueDEV
+- Douile https://github.com/Douile
+- drazero https://github.com/draZer0
