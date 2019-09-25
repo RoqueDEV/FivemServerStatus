@@ -190,7 +190,7 @@ exports.start = function(SETUP) {
         let queue = vars['Queue'];
         let embed = UpdateEmbed()
         .addField('Server Status',':white_check_mark: Online',true)
-        .addField('Wachtrij',queue === 'Aan' || queue === undefined ? '0' : queue.split(':')[1].trim(),true)
+        .addField('Wachtrij',queue === 'Enabled' || queue === undefined ? '0' : queue.split(':')[1].trim(),true)
         .addField('Online spelers',`${players.length}/${MAX_PLAYERS}\n\u200b\n`,true);
         // .addField('\u200b','\u200b\n\u200b\n',true);
         if (players.length > 0) {
