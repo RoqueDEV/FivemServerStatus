@@ -3,8 +3,16 @@ FiveM Server Status Discord Bot
 
 A custom discord bot providing functionality for interacting with fiveM servers and a discord community.
 
+## Requirements:
+
+- Included fivemqueue 
+
 ## Setup
-1. Set enviroment variables as described below
+
+1. Add the included fivemqueue to your server resources
+2. Start the fivemqueue in your server.cfg
+3. Set enviroment variables as described below
+
 ```
 URL_SERVER - base url for fiveM server e.g. http://127.0.0.1:3501 (don't end with /)
 LOG_LEVEL - Int of enum 0-4 specifying level of logs to display with 4 as no logs
