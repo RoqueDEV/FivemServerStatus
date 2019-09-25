@@ -5,7 +5,8 @@ A custom discord bot providing functionality for interacting with fiveM servers 
 
 ## Requirements:
 
-- Included fivemqueue 
+- Included fivemqueue
+I have edited the source code of https://github.com/anderscripts/FiveM_Queue and added that it will change the queue count in the    vars so it will update accurate.
 
 ## Setup
 
@@ -39,3 +40,4 @@ LOG_CHANNEL - channel to log status changes
 - Roque https://github.com/RoqueDEV
 - Douile https://github.com/Douile
 - drazero https://github.com/draZer0
+- Queue script: https://github.com/anderscripts/FiveM_Queue
