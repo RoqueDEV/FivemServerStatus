@@ -43,26 +43,6 @@ const LOG_LEVELS = {
   'SPAM': 0
 }
 
-const BOT_CONFIG = {
-  'apiRequestMethod': 'sequential',
-  'messageCacheMaxSize': 50,
-  'messageCacheLifetime': 0,
-  'messageSweepInterval': 0,
-  'fetchAllMembers': false,
-  'disableEveryone': true,
-  'sync': false,
-  'restWsBridgeTimeout': 5000, // check these
-  'restTimeOffset': 300,
-  'disabledEvents': [
-    'CHANNEL_PINS_UPDATE',
-    'TYPING_START'
-  ],
-  'ws': {
-    'large_threshold': 100,
-    'compress': true
-  }
-}
-
 const USER_AGENT = `Roofstad bot ${require('./package.json').version} , Node ${process.version} (${process.platform}${process.arch})`;
 
 exports.start = function(SETUP) {
@@ -124,7 +104,7 @@ exports.start = function(SETUP) {
     });
   };
 
-  const bot = new Discord.Client(BOT_CONFIG);
+  const bot = new Discord.Client();
 
   const sendOrUpdate = function(embed) {
     if (MESSAGE !== undefined) {
@@ -134,7 +114,7 @@ exports.start = function(SETUP) {
         log(LOG_LEVELS.ERROR,'Update failed');
       })
     } else {
-      let channel = bot.channels.get(CHANNEL_ID);
+      let channel = bot.channels.cache.get(CHANNEL_ID);
       if (channel !== undefined) {
         channel.fetchMessage(MESSAGE_ID).then((message) => {
           MESSAGE = message;
@@ -346,7 +326,7 @@ exports.start = function(SETUP) {
               STATUS = status;
               embed.setDescription(`New message:\n\`\`\`${STATUS}\`\`\``);
             }
-            bot.channels.get(LOG_CHANNEL).send(embed);
+            bot.channels.cache.get(LOG_CHANNEL).send(embed);
             return log(LOG_LEVELS.INFO,`${message.author.username} updated status`);
           }
         }
@@ -381,7 +361,7 @@ exports.start = function(SETUP) {
           .setDescription(message.content)
           .setTimestamp(new Date());
           message.channel.send(embedUser).then(null).catch(console.error);
-          bot.channels.get(BUG_LOG_CHANNEL).send(embedStaff).then(null).catch(console.error);
+          bot.channels.cache.get(BUG_LOG_CHANNEL).send(embedStaff).then(null).catch(console.error);
           return message.delete();
         }
       }
@@ -390,7 +370,7 @@ exports.start = function(SETUP) {
 
   bot.login(BOT_TOKEN).then(null).catch(() => {
     log(LOG_LEVELS.ERROR,'Unable to login check your login token');
-    console.error(e);
+    console.log(e);
     process.exit(1);
   });
 
